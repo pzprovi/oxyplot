@@ -51,6 +51,9 @@ namespace OxyPlot
                         return match.Value;
                     }
 
+                    if (item == null)
+                        return string.Empty;
+
                     var pi = item.GetType().GetRuntimeProperty(property);
                     if (pi == null)
                     {
@@ -67,7 +70,7 @@ namespace OxyPlot
             // Also apply the standard formatting
             s = string.Format(provider, s, values);
             return s;
-        }
+        }     
 
         /// <summary>
         /// Creates a valid format string on the form "{0:###}".
